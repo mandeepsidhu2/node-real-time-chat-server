@@ -9,6 +9,10 @@ const io = socketIO(server);
 
 const port = process.env.PORT || 8080;
 
+app.get('/hi', function(req, res) {
+    console.log("hello")
+});
+
 server.listen(port, () => {
     console.log(`started on port: ${port}`);
 });
