@@ -24,6 +24,10 @@ io.sockets.on('connection', function(socket) {
         console.log("on node server ,message: "+message)
         io.emit('recieve-message',message);
     })
+    socket.on('new-post', function(post) {
+        console.log("on node server ,post: "+post)
+        io.emit('recieve-posts',post);
+    })
 
 
 });
