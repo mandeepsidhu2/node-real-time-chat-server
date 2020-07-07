@@ -28,6 +28,13 @@ io.sockets.on('connection', function(socket) {
         console.log("on node server ,post: "+post)
         io.emit('recieve-posts',post);
     })
-
+    socket.on('send-like-unlike', function(post_id,likes) {
+        console.log("on node server ,like_unlike: "+post_id,likes)
+        let ob={
+            post_id:post_id,
+            likes:likes
+        }
+        io.emit('recieve-like-unlike',ob);
+    })
 
 });
